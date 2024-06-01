@@ -57,7 +57,7 @@ namespace WPF_DbTools.Antlr
          *
          * @param modes The input string to parse.
          */
-        public void sqlModeFromString(string modes) {
+	public void sqlModeFromString(string modes) {
             this.sqlModes.Clear();
 
             string[] parts = modes.ToUpper().Split(",");
@@ -305,20 +305,6 @@ namespace WPF_DbTools.Antlr
 
         protected MySQLBaseLexer(ICharStream input, TextWriter output, TextWriter errorOutput) : base(input, output, errorOutput)
         {
-        }
-
-        protected int type = 0;
-        public override int Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
-
-        protected string text;
-        public override string Text
-        {
-            get { return text;}
-            set { text = value; }
         }
     }
 }

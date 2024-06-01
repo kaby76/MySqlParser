@@ -139,7 +139,7 @@ BITWISE_XOR_OPERATOR
     ;
 
 LOGICAL_OR_OPERATOR
-    : '||' { this.type = this.isSqlModeActive(SqlMode.PipesAsConcat) ? MySQLLexer.CONCAT_PIPES_SYMBOL : MySQLLexer.LOGICAL_OR_OPERATOR;
+    : '||' { this.Type = this.isSqlModeActive(SqlMode.PipesAsConcat) ? MySQLLexer.CONCAT_PIPES_SYMBOL : MySQLLexer.LOGICAL_OR_OPERATOR;
         }
     ;
 
@@ -343,7 +343,7 @@ BIN_NUMBER
     ;
 
 INT_NUMBER
-    : DIGITS { this.type = this.determineNumericType(this.text); }
+    : DIGITS { this.Type = this.determineNumericType(this.Text); }
     ;
 
 // Float types must be handled first or the DOT_IDENTIIFER rule will make them to identifiers
@@ -382,7 +382,7 @@ ADD_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 ADDDATE_SYMBOL
-    : A D D D A T E                                                                       { this.type = this.determineFunction(MySQLLexer.ADDDATE_SYMBOL); }
+    : A D D D A T E                                                                       { this.Type = this.determineFunction(MySQLLexer.ADDDATE_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 AFTER_SYMBOL
@@ -490,11 +490,11 @@ BINLOG_SYMBOL
     ;
 
 BIT_AND_SYMBOL
-    : B I T '_' A N D                                                                     { this.type = this.determineFunction(MySQLLexer.BIT_AND_SYMBOL); }
+    : B I T '_' A N D                                                                     { this.Type = this.determineFunction(MySQLLexer.BIT_AND_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 BIT_OR_SYMBOL
-    : B I T '_' O R                                                                       { this.type = this.determineFunction(MySQLLexer.BIT_OR_SYMBOL); }
+    : B I T '_' O R                                                                       { this.Type = this.determineFunction(MySQLLexer.BIT_OR_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 BIT_SYMBOL
@@ -502,7 +502,7 @@ BIT_SYMBOL
     ;                                                                                     // MYSQL-FUNC
 
 BIT_XOR_SYMBOL
-    : B I T '_' X O R                                                                     { this.type = this.determineFunction(MySQLLexer.BIT_XOR_SYMBOL); }
+    : B I T '_' X O R                                                                     { this.Type = this.determineFunction(MySQLLexer.BIT_XOR_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 BLOB_SYMBOL
@@ -558,7 +558,7 @@ CASE_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 CAST_SYMBOL
-    : C A S T                                                                             { this.type = this.determineFunction(MySQLLexer.CAST_SYMBOL); }
+    : C A S T                                                                             { this.Type = this.determineFunction(MySQLLexer.CAST_SYMBOL); }
     ;                                                                                     // SQL-2003-R
 
 CATALOG_NAME_SYMBOL
@@ -726,7 +726,7 @@ CONVERT_SYMBOL
     ;                                                                                     // SQL-2003-N
 
 COUNT_SYMBOL
-    : C O U N T                                                                           { this.type = this.determineFunction(MySQLLexer.COUNT_SYMBOL); }
+    : C O U N T                                                                           { this.Type = this.determineFunction(MySQLLexer.COUNT_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 CPU_SYMBOL
@@ -746,7 +746,7 @@ CUBE_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 CURDATE_SYMBOL
-    : C U R D A T E                                                                       { this.type = this.determineFunction(MySQLLexer.CURDATE_SYMBOL); }
+    : C U R D A T E                                                                       { this.Type = this.determineFunction(MySQLLexer.CURDATE_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 CURRENT_SYMBOL
@@ -754,11 +754,11 @@ CURRENT_SYMBOL
     ;
 
 CURRENT_DATE_SYMBOL
-    : C U R R E N T '_' D A T E                                                           { this.type = this.determineFunction(MySQLLexer.CURDATE_SYMBOL); }
+    : C U R R E N T '_' D A T E                                                           { this.Type = this.determineFunction(MySQLLexer.CURDATE_SYMBOL); }
     ;                                                                                     // Synonym, MYSQL-FUNC
 
 CURRENT_TIME_SYMBOL
-    : C U R R E N T '_' T I M E                                                           { this.type = this.determineFunction(MySQLLexer.CURTIME_SYMBOL); }
+    : C U R R E N T '_' T I M E                                                           { this.Type = this.determineFunction(MySQLLexer.CURTIME_SYMBOL); }
     ;                                                                                     // Synonym, MYSQL-FUNC
 
 CURRENT_TIMESTAMP_SYMBOL
@@ -778,7 +778,7 @@ CURSOR_NAME_SYMBOL
     ;                                                                                     // SQL-2003-N
 
 CURTIME_SYMBOL
-    : C U R T I M E                                                                       { this.type = this.determineFunction(MySQLLexer.CURTIME_SYMBOL); }
+    : C U R T I M E                                                                       { this.Type = this.determineFunction(MySQLLexer.CURTIME_SYMBOL); }
     ;                                                                                     // MYSQL-FUNC
 
 DATABASE_SYMBOL
@@ -802,11 +802,11 @@ DATETIME_SYMBOL
     ;                                                                                     // MYSQL
 
 DATE_ADD_SYMBOL
-    : D A T E '_' A D D                                                                   { this.type = this.determineFunction(MySQLLexer.DATE_ADD_SYMBOL); }
+    : D A T E '_' A D D                                                                   { this.Type = this.determineFunction(MySQLLexer.DATE_ADD_SYMBOL); }
     ;
 
 DATE_SUB_SYMBOL
-    : D A T E '_' S U B                                                                   { this.type = this.determineFunction(MySQLLexer.DATE_SUB_SYMBOL); }
+    : D A T E '_' S U B                                                                   { this.Type = this.determineFunction(MySQLLexer.DATE_SUB_SYMBOL); }
     ;
 
 DATE_SYMBOL
@@ -1062,7 +1062,7 @@ EXTENT_SIZE_SYMBOL
     ;
 
 EXTRACT_SYMBOL
-    : E X T R A C T                                                                       { this.type = this.determineFunction(MySQLLexer.EXTRACT_SYMBOL); }
+    : E X T R A C T                                                                       { this.Type = this.determineFunction(MySQLLexer.EXTRACT_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 FALSE_SYMBOL
@@ -1206,7 +1206,7 @@ GROUP_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 GROUP_CONCAT_SYMBOL
-    : G R O U P '_' C O N C A T                                                           { this.type = this.determineFunction(MySQLLexer.GROUP_CONCAT_SYMBOL); }
+    : G R O U P '_' C O N C A T                                                           { this.Type = this.determineFunction(MySQLLexer.GROUP_CONCAT_SYMBOL); }
     ;
 
 HANDLER_SYMBOL
@@ -1622,7 +1622,7 @@ MAX_SIZE_SYMBOL
     ;
 
 MAX_SYMBOL
-    : M A X                                                                               { this.type = this.determineFunction(MySQLLexer.MAX_SYMBOL); }
+    : M A X                                                                               { this.Type = this.determineFunction(MySQLLexer.MAX_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 MAX_UPDATES_PER_HOUR_SYMBOL
@@ -1670,7 +1670,7 @@ MICROSECOND_SYMBOL
     ;                                                                                     // MYSQL-FUNC
 
 MID_SYMBOL
-    : M I D                                                                               { this.type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
+    : M I D                                                                               { this.Type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
     ;                                                                                     // Synonym
 
 MIDDLEINT_SYMBOL
@@ -1698,7 +1698,7 @@ MIN_ROWS_SYMBOL
     ;
 
 MIN_SYMBOL
-    : M I N                                                                               { this.type = this.determineFunction(MySQLLexer.MIN_SYMBOL); }
+    : M I N                                                                               { this.Type = this.determineFunction(MySQLLexer.MIN_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 MODE_SYMBOL
@@ -1790,11 +1790,11 @@ NONE_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 NOT_SYMBOL
-    : N O T                                                                               { this.type = this.isSqlModeActive(SqlMode.HighNotPrecedence) ? MySQLLexer.NOT2_SYMBOL: MySQLLexer.NOT_SYMBOL; }
+    : N O T                                                                               { this.Type = this.isSqlModeActive(SqlMode.HighNotPrecedence) ? MySQLLexer.NOT2_SYMBOL: MySQLLexer.NOT_SYMBOL; }
     ;                                                                                     // SQL-2003-R
 
 NOW_SYMBOL
-    : N O W                                                                               { this.type = this.determineFunction(MySQLLexer.NOW_SYMBOL); }
+    : N O W                                                                               { this.Type = this.determineFunction(MySQLLexer.NOW_SYMBOL); }
     ;
 
 NO_SYMBOL
@@ -1958,7 +1958,7 @@ PORT_SYMBOL
     ;
 
 POSITION_SYMBOL
-    : P O S I T I O N                                                                     { this.type = this.determineFunction(MySQLLexer.POSITION_SYMBOL); }
+    : P O S I T I O N                                                                     { this.Type = this.determineFunction(MySQLLexer.POSITION_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 PRECEDES_SYMBOL
@@ -2314,7 +2314,7 @@ SERVER_SYMBOL
     ;
 
 SESSION_USER_SYMBOL
-    : S E S S I O N '_' U S E R                                                           { this.type = this.determineFunction(MySQLLexer.USER_SYMBOL); }
+    : S E S S I O N '_' U S E R                                                           { this.Type = this.determineFunction(MySQLLexer.USER_SYMBOL); }
     ;                                                                                     // Synonym
 
 SET_SYMBOL
@@ -2478,19 +2478,19 @@ STATUS_SYMBOL
     ;
 
 STDDEV_SAMP_SYMBOL
-    : S T D D E V '_' S A M P                                                             { this.type = this.determineFunction(MySQLLexer.STDDEV_SAMP_SYMBOL); }
+    : S T D D E V '_' S A M P                                                             { this.Type = this.determineFunction(MySQLLexer.STDDEV_SAMP_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 STDDEV_SYMBOL
-    : S T D D E V                                                                         { this.type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
+    : S T D D E V                                                                         { this.Type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
     ;                                                                                     // Synonym
 
 STDDEV_POP_SYMBOL
-    : S T D D E V '_' P O P                                                               { this.type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
+    : S T D D E V '_' P O P                                                               { this.Type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
     ;                                                                                     // Synonym
 
 STD_SYMBOL
-    : S T D                                                                               { this.type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
+    : S T D                                                                               { this.Type = this.determineFunction(MySQLLexer.STD_SYMBOL); }
     ;
 
 STOP_SYMBOL
@@ -2518,7 +2518,7 @@ SUBCLASS_ORIGIN_SYMBOL
     ;                                                                                     // SQL-2003-N
 
 SUBDATE_SYMBOL
-    : S U B D A T E                                                                       { this.type = this.determineFunction(MySQLLexer.SUBDATE_SYMBOL); }
+    : S U B D A T E                                                                       { this.Type = this.determineFunction(MySQLLexer.SUBDATE_SYMBOL); }
     ;
 
 SUBJECT_SYMBOL
@@ -2534,15 +2534,15 @@ SUBPARTITION_SYMBOL
     ;
 
 SUBSTR_SYMBOL
-    : S U B S T R                                                                         { this.type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
+    : S U B S T R                                                                         { this.Type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
     ;                                                                                     // Synonym
 
 SUBSTRING_SYMBOL
-    : S U B S T R I N G                                                                   { this.type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
+    : S U B S T R I N G                                                                   { this.Type = this.determineFunction(MySQLLexer.SUBSTRING_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 SUM_SYMBOL
-    : S U M                                                                               { this.type = this.determineFunction(MySQLLexer.SUM_SYMBOL); }
+    : S U M                                                                               { this.Type = this.determineFunction(MySQLLexer.SUM_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 SUPER_SYMBOL
@@ -2562,11 +2562,11 @@ SWITCHES_SYMBOL
     ;
 
 SYSDATE_SYMBOL
-    : S Y S D A T E                                                                       { this.type = this.determineFunction(MySQLLexer.SYSDATE_SYMBOL); }
+    : S Y S D A T E                                                                       { this.Type = this.determineFunction(MySQLLexer.SYSDATE_SYMBOL); }
     ;
 
 SYSTEM_USER_SYMBOL
-    : S Y S T E M '_' U S E R                                                             { this.type = this.determineFunction(MySQLLexer.USER_SYMBOL); }
+    : S Y S T E M '_' U S E R                                                             { this.Type = this.determineFunction(MySQLLexer.USER_SYMBOL); }
     ;
 
 TABLES_SYMBOL
@@ -2662,7 +2662,7 @@ TRIGGER_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 TRIM_SYMBOL
-    : T R I M                                                                             { this.type = this.determineFunction(MySQLLexer.TRIM_SYMBOL); }
+    : T R I M                                                                             { this.Type = this.determineFunction(MySQLLexer.TRIM_SYMBOL); }
     ;                                                                                     // SQL-2003-N
 
 TRUE_SYMBOL
@@ -2810,7 +2810,7 @@ VARIABLES_SYMBOL
     ;
 
 VARIANCE_SYMBOL
-    : V A R I A N C E                                                                     { this.type = this.determineFunction(MySQLLexer.VARIANCE_SYMBOL); }
+    : V A R I A N C E                                                                     { this.Type = this.determineFunction(MySQLLexer.VARIANCE_SYMBOL); }
     ;
 
 VARYING_SYMBOL
@@ -2818,11 +2818,11 @@ VARYING_SYMBOL
     ;                                                                                     // SQL-2003-R
 
 VAR_POP_SYMBOL
-    : V A R '_' P O P                                                                     { this.type = this.determineFunction(MySQLLexer.VARIANCE_SYMBOL); }
+    : V A R '_' P O P                                                                     { this.Type = this.determineFunction(MySQLLexer.VARIANCE_SYMBOL); }
     ;                                                                                     // Synonym
 
 VAR_SAMP_SYMBOL
-    : V A R '_' S A M P                                                                   { this.type = this.determineFunction(MySQLLexer.VAR_SAMP_SYMBOL); }
+    : V A R '_' S A M P                                                                   { this.Type = this.determineFunction(MySQLLexer.VAR_SAMP_SYMBOL); }
     ;
 
 VIEW_SYMBOL
@@ -3597,7 +3597,7 @@ INVALID_INPUT
 // The underscore charset token is used to defined the repertoire of a string, though it conflicts
 // with normal identifiers, which also can start with an underscore.
 UNDERSCORE_CHARSET
-    : UNDERLINE_SYMBOL [a-z0-9]+ { this.type = this.checkCharset(this.text); }
+    : UNDERLINE_SYMBOL [a-z0-9]+ { this.Type = this.checkCharset(this.Text); }
     ;
 
 // Identifiers might start with a digit, even though it is discouraged, and may not consist entirely of digits only.
@@ -3657,7 +3657,7 @@ DOLLAR_QUOTED_STRING_TEXT
 //                   the current server version (specifying so the minimum server version the code can run with).
 VERSION_COMMENT_START
     : ('/*!' DIGITS) (
-        {this.checkMySQLVersion(this.text)}? // Will set this.inVersionComment if the number matches.
+        {this.checkMySQLVersion(this.Text)}? // Will set this.inVersionComment if the number matches.
         | .*? '*/'
     ) -> channel(HIDDEN)
     ;

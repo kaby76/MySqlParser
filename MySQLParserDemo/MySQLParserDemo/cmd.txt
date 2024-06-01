@@ -1,1 +1,0 @@
-java -jar antlr-4.13.1-complete.jar -Dlanguage=CSharp -visitor -package WPF_DbTools.Antlr -o ../Antlr MySQLParser.g4 MySQLLexer.g4
