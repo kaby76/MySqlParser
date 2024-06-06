@@ -283,21 +283,16 @@ namespace WPF_DbTools.Antlr
         protected void emitDot()
         {
             this.pendingTokens.Enqueue(TokenFactory.Create(Tuple.Create((ITokenSource)this, (this as ITokenSource).InputStream), MySQLLexer.DOT_SYMBOL,
-                Text, Channel, TokenStartCharIndex, TokenStartCharIndex, Line,
+                ".", Channel, TokenStartCharIndex, TokenStartCharIndex, Line,
                 Column
             ));
 
-            ++this.Column;
-            ++_TokenStartCharIndex;
-        }
+	    this.pendingTokens.Enqueue(TokenFactory.Create(Tuple.Create((ITokenSource)this, (this as ITokenSource).InputStream), MySQLLexer.IDENTIFIER,
+		    Text.Substring(1), Channel, TokenStartCharIndex+1, TokenStartCharIndex+Text.Substring(1).Length, Line,
+		    Column+1
+		    ));
 
-        public override int TokenStartCharIndex {
-            get
-            {
-                return _TokenStartCharIndex;
-            }
         }
-        private int _TokenStartCharIndex = 0;
 
         protected MySQLBaseLexer(ICharStream input) : base(input)
         {
