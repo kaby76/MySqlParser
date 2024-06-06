@@ -345,3 +345,10 @@ ASALocalRun/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.interp
+*.tokens
+MySQLParser.cs
+MySQLParserBaseListener.cs
+MySQLParserBaseVisitor.cs
+MySQLParserListener.cs
+MySQLParserVisitor.cs
